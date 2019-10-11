@@ -4,7 +4,15 @@ const videosContainer = document.querySelector('#videos');
 
 // Get all videos
 const getAllVideos = () => JSON.parse(videosJSON).Movies;
-const videos = getAllVideos();
+let videos = getAllVideos();
+
+// Remove duplicate videos from the videos array
+const removeDuplicateVideos = array => array.reduce((unique, arrayItem) => {
+    if (!unique.some(uniqueItem => uniqueItem.imdbID === arrayItem.imdbID)) unique.push(arrayItem);
+    return unique;
+}, []);
+
+videos = removeDuplicateVideos(videos);
 
 // Filter video data to get all movies from 2014 and later
 const getNewestMovies = array => {
