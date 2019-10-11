@@ -1,4 +1,4 @@
-const filmJSON = `{
+const videosJSON = `{
     "Movies": [
         {
             "Title": "X-Men: Days of Future Past",
@@ -254,5 +254,3 @@ const filmJSON = `{
         }
     ]
 }`
-
-const films = JSON.parse(filmJSON).Movies;

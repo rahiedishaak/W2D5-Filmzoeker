@@ -10,29 +10,33 @@
 
 <body>
 
-    <label for="newest">
-        <input type="radio" name="filter-films" id="newest" value="newest"> Nieuwste
-    </label>
+    <div class="container">
+        <label for="all">
+            <input type="radio" name="filter-films" id="all" value="all" class="filters"> Toon alles
+        </label>
+    
+        <label for="newest">
+            <input type="radio" name="filter-films" id="newest" value="newest" class="filters"> Nieuwste Films
+        </label>
+    
+        <label for="xmen">
+            <input type="radio" name="filter-films" id="xmen" value="xmen" class="filters"> X-Men Films
+        </label>
+    
+        <label for="avengers">
+            <input type="radio" name="filter-films" id="avengers" value="avengers" class="filters"> Avengers Films
+        </label>
+    
+        <label for="princess">
+            <input type="radio" name="filter-films" id="princess" value="princess" class="filters"> Princess Films
+        </label>
+    
+        <label for="batman">
+            <input type="radio" name="filter-films" id="batman" value="batman" class="filters"> Batman Films
+        </label>
 
-    <label for="xmen">
-        <input type="radio" name="filter-films" id="xmen" value="xmen"> X-Men
-    </label>
-
-    <label for="avengers">
-        <input type="radio" name="filter-films" id="avengers" value="avengers"> Avengers
-    </label>
-
-    <label for="princess">
-        <input type="radio" name="filter-films" id="princess" value="princess"> Princess
-    </label>
-
-    <label for="batman">
-        <input type="radio" name="filter-films" id="batman" value="batman"> Batman
-    </label>
-
-    <button>Reset</button>
-
-    <div id="grid"></div>
+        <ul id="videos"></ul>        
+    </div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
