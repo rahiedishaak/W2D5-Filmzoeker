@@ -115,6 +115,13 @@ header h1 {
     grid-row-gap: 2rem;
 }
 
+#videos li {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
 #videos li a {
     height: 20rem;
     display: inline-block;
@@ -138,6 +145,18 @@ footer {
     color: #ccc;
     font-size: 1.2rem;
     letter-spacing: 1.2px;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Media Queries */
