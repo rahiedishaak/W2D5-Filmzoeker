@@ -9,10 +9,11 @@ html {
 }
 
 body {
-    background-color: #111;
+    background-image: linear-gradient(to right, #111, #010101);
     font-family: Verdana, sans-serif;
     font-size: 1.4rem;
     color: #fff;
+    letter-spacing: 1.2px;
 }
 
 .container {
@@ -22,18 +23,73 @@ body {
 }
 
 header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 header h1 {
-    background-image: linear-gradient(to bottom, #ff0000, #990000);
+    background-image: linear-gradient(to right, #f00, #600);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-align: center;
-    font-size: 9rem;
+    font-size: 10rem;
     font-style: italic;
     letter-spacing: 5px;
+}
+
+#search {
+    margin-bottom: 3.5rem;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+}
+
+#search-form input[type=text] {
+    background-image: linear-gradient(to bottom, #fff, #ccc);
+    border: none;
+    outline: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    width: 30rem;
+    padding: 1rem 1.25rem;
+    font-family: Verdana, sans-serif;
+    letter-spacing: 1.2px;
+    font-size: 1.5rem;
+}
+
+#search-form button {
+    background-image: linear-gradient(to bottom, #f00, #900);
+    border: none;
+    outline: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-family: Verdana, sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#filters-form {
+    width: 60%;
+    margin: 0 auto 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+    grid-gap: .75rem;
+}
+
+#filters-form label {
+    display: flex;
+    align-items: center;
+}
+
+#filters-form label input[type=radio] {
+    margin-right: .5rem;
 }
 
 #videos {
@@ -41,7 +97,7 @@ header h1 {
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
 }
 
 #videos li a img {

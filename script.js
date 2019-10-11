@@ -1,4 +1,6 @@
-// Select all radio buttons
+// Select DOM elements
+const searchFormElement = document.querySelector('#search-form');
+const searchFieldElement = document.querySelector('#search-field')
 const filterRadioButtons = document.querySelectorAll('.filters');
 const videosContainer = document.querySelector('#videos');
 
@@ -11,7 +13,6 @@ const removeDuplicateVideos = array => array.reduce((unique, arrayItem) => {
     if (!unique.some(uniqueItem => uniqueItem.imdbID === arrayItem.imdbID)) unique.push(arrayItem);
     return unique;
 }, []);
-
 videos = removeDuplicateVideos(videos);
 
 // Filter video data to get all movies from 2014 and later
@@ -21,8 +22,11 @@ const getNewestMovies = array => {
     });
 };
 
-// Filter video data to get all movies with a given title
+// Filter video data to get all movies (no series) with a given title
 const getFilteredMovies = (array, value) => array.filter(item => item.Title.includes(value) && item.Type === 'movie');
+
+// Filter video data to get all movies AND series user is looking for via search
+const getSearchedVideos = (array, value) => array.filter(item => item.Title.toLowerCase().includes(value.toLowerCase()));
 
 // Render videos to DOM
 const renderToDOM = array => {
@@ -66,4 +70,15 @@ filterRadioButtons.forEach(button => {
         else if (event.target.value === 'batman') filteredMovies = getFilteredMovies(videos, 'Batman');
         renderToDOM(filteredMovies);
     });
+});
+
+// Event Listener for search form
+searchFormElement.addEventListener('input', function(event) {
+    let filteredMovies = getSearchedVideos(videos, searchFieldElement.value)
+    renderToDOM(filteredMovies);
+});
+
+searchFormElement.addEventListener('submit', function(event) {
+    event.preventDefault();
+    searchFieldElement.value = '';
 });
